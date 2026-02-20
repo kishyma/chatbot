@@ -37,3 +37,24 @@ EXPOSE 3000
 
 # Default command to start dev server
 CMD ["npm", "run", "dev"]
+
+# Base image with Node.js LTS
+FROM mcr.microsoft.com/devcontainers/javascript-node:0-18
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy package.json and package-lock.json first (for caching npm install)
+COPY ../package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the app
+COPY ../ ./
+
+# Expose Next.js port
+EXPOSE 3000
+
+# Default command to start dev server
+CMD ["npm", "run", "dev"]
