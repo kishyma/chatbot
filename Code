@@ -1,0 +1,14 @@
+grammyai/
+ ├─ app/
+ │   ├─ layout.jsx
+ │   ├─ page.jsx
+ │   ├─ feed/page.jsx
+ │   ├─ dm/page.jsx
+ │   └─ api/
+ │        ├─ login/route.js
+ │        └─ ai/route.js
+ ├─ styles/
+ │    └─ globals.css
+ ├─ package.json
+ ├─ next.config.js
+ └─ .env.local
